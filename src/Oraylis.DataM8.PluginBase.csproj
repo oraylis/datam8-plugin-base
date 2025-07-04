@@ -4,9 +4,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Company>ORAYLIS GmbH</Company>
     <PackageId>Oraylis.DataM8.PluginBase</PackageId>
+    <PackageDescription>TBD</PackageDescription>
+    <RepositoryUrl>https://github.com/oraylis/datam8-plugin-base</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -34,5 +36,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Prism.Core" Version="9.0.537" />
   </ItemGroup>
+
+  <Target Name="PrintVersion">
+    <Message Text="Version: $(Version)" Importance="High"/>
+  </Target>
 
 </Project>

@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: > 
+          dotnet nuget add source
+          --username oraylis
+          --password ${{ secrets.GITHUB_TOKEN }}
+          --store-password-in-clear-text
+          --name github "https://nuget.pkg.github.com/oraylis/index.json"
+          
+      - run: | 
+          dotnet pack --configuration Release
+
+      - run: |
+          dotnet nuget push "src/bin/Release/Oraylis.DataM8.PluginBase.0.1.1.nupkg" --source "github"

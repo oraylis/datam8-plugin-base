@@ -35,6 +35,6 @@ namespace Oraylis.DataM8.PluginBase.Interfaces
 
       public Task<IList<RawModelEntryBase>> SelectObjects(Func<string ,bool> addFiles);
 
-      public Task<DateTime> RefreshAttributesAsync(RawModelEntryBase selectedEntity ,bool update = false);
+      public Task<DateTime> RefreshAttributesAsync<T>(T selectedEntity ,bool update = false);
    }
 }

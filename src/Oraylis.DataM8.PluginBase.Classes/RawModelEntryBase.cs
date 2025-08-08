@@ -21,12 +21,12 @@ using Oraylis.DataM8.PluginBase.Interfaces;
 
 namespace Oraylis.DataM8.PluginBase.BaseClasses
 {
-    public class RawModelEntryBase : Prism.Mvvm.BindableBase ,IRawModelEntryBase
-    {
-        public string Schema { get; set; } = "";
-        public dynamic Type { get; set; } = "";
-        public RawEntityBase Entity { get; set; } = new RawEntityBase();
-        public RawFunctionBase Function { get; set; }= new RawFunctionBase();
-    }
+   public class RawModelEntryBase:Prism.Mvvm.BindableBase, IRawModelEntryBase
+   {
+      public string Schema { get; set; } = "";
+      public dynamic Type { get; set; } = "";
+      public RawEntityBase Entity { get; set; } = new RawEntityBase();
+      public RawFunctionBase Function { get; set; } = new RawFunctionBase();
+   }
 }
 

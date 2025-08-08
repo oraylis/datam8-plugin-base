@@ -17,28 +17,21 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
-
 namespace Oraylis.DataM8.PluginBase.Helper
 {
-    public class StringHelper
-    {
+   public class StringHelper
+   {
 
-        public static string Encode(string str)
-        {
-            str = Uri.EscapeDataString(str);
-            return (str);
-        }
-        public static string Decode(string str)
-        {
-            str = Uri.UnescapeDataString(str);
-            return (str);
-        }
+      public static string Encode(string str)
+      {
+         str = Uri.EscapeDataString(str);
+         return (str);
+      }
+      public static string Decode(string str)
+      {
+         str = Uri.UnescapeDataString(str);
+         return (str);
+      }
 
-    }
+   }
 }

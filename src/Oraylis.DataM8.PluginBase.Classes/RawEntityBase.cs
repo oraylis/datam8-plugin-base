@@ -17,27 +17,27 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-using Oraylis.DataM8.PluginBase.Interfaces;
 using System.Collections.ObjectModel;
+using Oraylis.DataM8.PluginBase.Interfaces;
 
 namespace Oraylis.DataM8.PluginBase.BaseClasses
 {
-    public class RawEntityBase : Prism.Mvvm.BindableBase, IRawEntityBase
-    {
-        public string DataModule { get; set; } = "";
-        public string DataProduct { get; set; } = "";
-        public string Name { get; set; } = "";
-        public string DisplayName { get; set; } = "";
-        [Newtonsoft.Json.JsonIgnore]
-        public string ObjectType { get; set; } = "";
-        public ObservableCollection<RawAttributBase> Attribute { get; set; } = new ObservableCollection<RawAttributBase>();
-        public string Dm8l
-        {
-            get
-            {
-                return $"/Raw/{this.DataProduct}/{this.DataModule}/{this.Name}";
-            }
-        }
-        public string FolderName { get; set; } = "";
-    }
+   public class RawEntityBase:Prism.Mvvm.BindableBase, IRawEntityBase
+   {
+      public string DataModule { get; set; } = "";
+      public string DataProduct { get; set; } = "";
+      public string Name { get; set; } = "";
+      public string DisplayName { get; set; } = "";
+      [Newtonsoft.Json.JsonIgnore]
+      public string ObjectType { get; set; } = "";
+      public ObservableCollection<RawAttributBase> Attribute { get; set; } = new ObservableCollection<RawAttributBase>();
+      public string Dm8l
+      {
+         get
+         {
+            return $"/Raw/{this.DataProduct}/{this.DataModule}/{this.Name}";
+         }
+      }
+      public string FolderName { get; set; } = "";
+   }
 }

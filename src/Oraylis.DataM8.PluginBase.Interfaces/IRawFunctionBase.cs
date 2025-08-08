@@ -21,6 +21,6 @@ namespace Oraylis.DataM8.PluginBase.Interfaces;
 
 public interface IRawFunctionBase
 {
-    string DataSource { get; set; }
-    string SourceLocation { get; set; }
+   string DataSource { get; set; }
+   string SourceLocation { get; set; }
 }

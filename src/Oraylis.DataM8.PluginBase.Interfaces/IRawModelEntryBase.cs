@@ -17,23 +17,22 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-using System.Text.Json.Nodes;
-using Oraylis.DataM8.PluginBase.BaseClasses;
 using Newtonsoft.Json;
+using Oraylis.DataM8.PluginBase.BaseClasses;
 
 namespace Oraylis.DataM8.PluginBase.Interfaces
 {
-    public interface IRawModelEntryBase
-    {
-        [JsonIgnore]
-        string Schema { get; set; }
+   public interface IRawModelEntryBase
+   {
+      [JsonIgnore]
+      string Schema { get; set; }
 
-        public dynamic Type { get; set; }
+      public dynamic Type { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("entity")]
-        RawEntityBase Entity { get; set; }
+      [Newtonsoft.Json.JsonProperty("entity")]
+      RawEntityBase Entity { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("function")]
-        RawFunctionBase Function { get; set; }
-    }
+      [Newtonsoft.Json.JsonProperty("function")]
+      RawFunctionBase Function { get; set; }
+   }
 }

@@ -21,9 +21,9 @@ using Oraylis.DataM8.PluginBase.Interfaces;
 
 namespace Oraylis.DataM8.PluginBase.BaseClasses
 {
-    public class RawFunctionBase : IRawFunctionBase
-    {
-        public string DataSource { get; set; } = "";
-        public string SourceLocation { get; set; } = "";
-    }
+   public class RawFunctionBase:IRawFunctionBase
+   {
+      public string DataSource { get; set; } = "";
+      public string SourceLocation { get; set; } = "";
+   }
 }

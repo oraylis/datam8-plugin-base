@@ -20,4 +20,4 @@ jobs:
           dotnet pack --configuration Release
 
       - run: |
-          dotnet nuget push "src/bin/Release/Oraylis.DataM8.PluginBase.0.1.2.nupkg" --source "github"
+          dotnet nuget push "src/bin/Release/Oraylis.DataM8.PluginBase.0.1.3.nupkg" --source "github"

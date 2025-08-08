@@ -23,7 +23,7 @@ namespace Oraylis.DataM8.PluginBase.Interfaces
 {
    public interface IDm8PluginConnectorSourceExplorerV1
    {
-      public IDataSourceBase Source { get; set; }
+      public DataSourceBase Source { get; set; }
       public string Name { get; }
       public string Layer { get; set; }
       public string DataModule { get; set; }

@@ -17,6 +17,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+using System.Collections.ObjectModel;
 using Oraylis.DataM8.PluginBase.BaseClasses;
 
 namespace Oraylis.DataM8.PluginBase.Interfaces
@@ -35,6 +36,6 @@ namespace Oraylis.DataM8.PluginBase.Interfaces
 
       public Task<IList<RawModelEntryBase>> SelectObjects(Func<string ,bool> addFiles);
 
-      public Task<DateTime> RefreshAttributesAsync<T>(T selectedEntity ,bool update = false);
+      public Task<DateTime> RefreshAttributesAsync<T>(T selectedEntity ,bool update = false ,ObservableCollection<RawAttributBase>? elements = null);
    }
 }

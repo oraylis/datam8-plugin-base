@@ -19,6 +19,8 @@
 
 using System.Data;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 
 namespace Oraylis.DataM8.PluginBase.Extensions
 {
@@ -62,19 +64,25 @@ namespace Oraylis.DataM8.PluginBase.Extensions
 
       public static T? ConvertClass<T, U>(U source)
       {
-         string tmpStr = JsonConvert.SerializeObject(source ,Formatting.None ,new JsonSerializerSettings()
+         var settings = new JsonSerializerSettings
          {
-            NullValueHandling = NullValueHandling.Ignore
-         });
+            NullValueHandling = NullValueHandling.Ignore ,
+            ContractResolver = new DefaultContractResolver
+            {
+               NamingStrategy = new CamelCaseNamingStrategy
+               {
+                  ProcessDictionaryKeys = true ,
+                  OverrideSpecifiedNames = false
+               }
+            } ,
+            Converters =
+            {
+               new StringEnumConverter() {AllowIntegerValues= false}
+            }
+         };
+
+         string tmpStr = JsonConvert.SerializeObject(source ,Formatting.Indented ,settings);
          var x = JsonConvert.DeserializeObject<T>(tmpStr);
-
-         //PropertyInfo[] ps = source.GetType().GetProperties();
-         //foreach (PropertyInfo p in ps)
-         //{
-         //}
-
-
-
          return x;
       }
 

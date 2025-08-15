@@ -71,13 +71,13 @@ namespace Oraylis.DataM8.PluginBase.Extensions
             {
                NamingStrategy = new CamelCaseNamingStrategy
                {
-                  ProcessDictionaryKeys = true ,
+                  ProcessDictionaryKeys = false ,
                   OverrideSpecifiedNames = false
                }
             } ,
             Converters =
             {
-               new StringEnumConverter() {AllowIntegerValues= false}
+               new StringEnumConverter()
             }
          };
 
